@@ -11,7 +11,6 @@ const AddToList: React.FC<IProps> = ({setTask, taskList}) => {
     const [input, setInput] = useState({
         taskName: "",
         taskEndTime: "",
-        note: ""
     }) 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,18 +25,20 @@ const AddToList: React.FC<IProps> = ({setTask, taskList}) => {
 
         setTask([
             ...taskList,
-            {
+            {      
+                taskId:taskList[taskList.length-1].taskId+1,
                 taskName: input.taskName,
                 endTime: input.taskEndTime,
-                note:input.note
+                isComplete:false,
+                isRelevent:true
+                
             }
         ]);
 
         setInput({
             taskName: "",
-            taskEndTime: "",
-            note: ""
-        })
+            taskEndTime: ""
+                })
     }
 
     return (
@@ -59,13 +60,7 @@ const AddToList: React.FC<IProps> = ({setTask, taskList}) => {
                 placeholder="Age"
             />
           
-            <textarea
-                onChange={handleChange}
-                className="AddToList-input"
-                name="note"
-                value={input.note}
-                placeholder="Note"
-            />
+         
             <button
                 onClick={handleClick}
                 className="AddToList-btn"
