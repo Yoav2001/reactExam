@@ -3,7 +3,8 @@ import './App.css';
 import  AddTask  from './components/AddTask';
 import { CompleteTasksList } from './components/completeTasks';
 import { List } from './components/List';
-
+import '../src/App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IState {
   taskList: {
@@ -28,14 +29,30 @@ function App() {
       endTime: "1.1.12",
       isComplete: true,
       isRelevent:true
+    },
+    { 
+      taskId:2,
+      taskName: "LeBron James",
+      endTime: "1.1.12",
+      isComplete: true,
+      isRelevent:true
     }
    
   ])
   return (
     <div className="App">
       <h1>People Invited to my Party</h1>
-     <List taskList={taskList}/>
-     <CompleteTasksList taskList={taskList}/>
+      <div className="listPostion">
+          <div className="listBorder">
+                <List  taskList={taskList} setTask={setTask}/> 
+          </div>
+
+          <div className="listBorder">
+             <CompleteTasksList taskList={taskList}/>
+          </div>
+
+      </div>
+  
      <AddTask setTask={setTask} taskList={taskList}/>
 
     </div>

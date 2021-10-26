@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: linear-gradient(-440deg, #fafafa, #0cb870); 
+    background-size:100%;
 }
 
 .App-logo {
@@ -56,11 +58,14 @@
   list-style: none;
   display: flex;
   align-items:flex-end;
-  width: 15rem;
-  margin: 0rem auto;
+  width: 25rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.233);
   padding: 1rem;
   justify-content: space-between;
+  position: relative;
+  top: 40px;
+  background-color: rgba(154, 42, 192, 0.247);
+  opacity: 0.6;
 }
 
 .List-header {
@@ -69,7 +74,7 @@
 }
 
 .List-header h2 {
-  color: rgb(37, 36, 36)
+  color: rgb(255, 255, 255)
 }
 
 .List-img {
@@ -88,13 +93,18 @@
   display: flex;
   flex-direction: column;
   width: 30rem;
-  margin: 5rem auto
+  margin: 5rem auto;
+  border: 2px red solid;
+
+  
 }
 
 .AddToList-input {
   padding: 0.5rem;
   font-size: 1rem;
-  margin: 0.3rem 0rem
+  margin: 0.3rem 0rem;
+  border: 2px red solid;
+
 }
 
 .AddToList-btn {
@@ -103,52 +113,51 @@
   background-color: #0b5468;
   font-weight: 700;
   color: white;
-  border: none
-}
+  border: none;
+  border: 2px red solid;
 
+} 
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-ul li:hover {
-  background: #ddd;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
 
 
 .inCompleteList{
-position: absolute;
-left: 20%;
+position: relative;
+border: 2px blue solid;
+padding :15px;
+width: max-content;
+}
 
+.completeList{
+  position: relative;
+  border: 2px red solid;
+  padding :15px;
+  margin-left: 50px;
+}
+
+
+.listPostion{
+display:flex;
+justify-content: center;
 
 }
 
-.complenteList{
-  position: absolute;
-  left: 80%;
 
 
+.listBorder{
+border: 2px red solid;
+padding: 50px;
+margin: 10px;
+}
+
+.imgComplete{
+  width:10px;
+}
+
+body{
+
+}
+
+p{
+
+  color:lavenderblush
 }

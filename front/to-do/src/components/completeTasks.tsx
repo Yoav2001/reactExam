@@ -11,11 +11,11 @@ export const CompleteTasksList: React.FC<IProps> = ({ taskList }) => {
     const renderList = (): JSX.Element[] => {
         return taskList.filter(taskObj=>taskObj.isComplete).map(taskObj => {
             return (
-                <li className="List">  
-                    <h4>{taskObj.taskName}</h4>
-                    <h6>{taskObj.endTime}</h6>
-                </li>
-            
+            <li className="List">    
+                    <p>{taskObj.taskName}</p>
+                    <p>{taskObj.endTime}</p>      
+
+             </li>
             )
         })
     }
