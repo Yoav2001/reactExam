@@ -1,7 +1,9 @@
 
 import React from 'react'
-import { IState  as Props } from "../App";
-import completeImg  from '../img/s.png'
+import { IState  as Props } from '../../App';
+import completeImg  from '../../img/s.png'
+import '../../css/listAndComplete.css'
+
 interface IProps {
     setTask: React.Dispatch<React.SetStateAction<Props["taskList"]>>
 

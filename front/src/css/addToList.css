@@ -1,0 +1,27 @@
+
+.AddToList {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: 5rem auto;
+  
+    
+  }
+  
+  .AddToList-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 0.3rem 0rem;
+  
+  }
+  
+  .AddToList-btn {
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: rgba(0, 26, 255, 0.856);
+    font-weight: 700;
+    color: white;
+    border: none;
+  
+  } 
+  

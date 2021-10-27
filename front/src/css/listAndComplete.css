@@ -1,0 +1,70 @@
+
+.ListComplete{
+    display: none;
+    position:fixed;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.233);
+    padding: 1rem;
+    justify-content: space-between;
+  }
+  .List {
+    list-style: none;
+    display: flex;
+    align-items:flex-end;
+    width: 25rem;
+    border: 0.1rem solid rgba(206, 206, 206, 0.856);
+    border-radius: 3px;
+    padding: 1rem;
+    justify-content: space-between;
+    position: relative;
+    top: 40px;
+    background-color: rgba(39, 99, 189, 0.897);
+    opacity: 0.8 ;
+  }
+  
+  .List-header {
+    display: flex;
+    align-items:flex-end;
+  }
+  
+  .List-header h2 {
+    color: rgb(255, 255, 255)
+  }
+  
+  .List-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+  }
+  
+  .List-note {
+    width: 30%;
+    text-align: left;
+  }
+  
+  
+  
+  .inCompleteList{
+    position: relative;
+    border: 2px blue solid;
+    padding :15px;
+    width: max-content;
+  }
+  
+  
+  
+  
+  .imgComplete{
+    width:10px;
+  }
+  
+  
+  
+  p{
+  
+    color:lavenderblush
+  }

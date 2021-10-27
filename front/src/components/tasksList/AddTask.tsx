@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { IState as Props } from "../App";
+import { IState as Props } from '../../App'
+import '../../css/addToList.css'
+
+
 
 interface IProps {
     setTask: React.Dispatch<React.SetStateAction<Props["taskList"]>>

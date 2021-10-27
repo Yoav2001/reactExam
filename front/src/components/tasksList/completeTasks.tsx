@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { IState  as Props } from "../App";
+import { IState  as Props } from '../../App';
+import '../../css/listAndComplete.css'
 
 interface IProps {
     taskList: Props["taskList"]

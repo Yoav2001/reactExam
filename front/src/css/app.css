@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+
+}
+
+
+.listPostion{
+  display:flex;
+  justify-content: center;
+  
+  }
+  
+  
+  
+  .listBorder{
+  border-radius: 5%;
+  padding: 50px;
+  margin: 10px;
+  }
