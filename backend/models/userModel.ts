@@ -1,13 +1,13 @@
 export type User = {
-    id: number,
-    username: string,
+    email: string
     password: string,
-    isAdmin: boolean,
+    fullName: string,
+    isAdmin:boolean
 }
 
-export type GetUser = (userId: User["id"]) => Promise<User>;
-export type GetUserViaUsername = (username: User["username"]) => Promise<User>;
+export type GetUser = (userId: User["email"]) => Promise<User>;
+export type GetUserWithFullName = (username: User["fullName"]) => Promise<User>;
 export type GetAllUsers = () => Promise<User[]>;
-export type AddUser = ({username, password, adminPassword}: any) => Promise<User>;
-export type DeleteUser = (userId: User["id"]) => Promise<string>;
-export type SetAdmin = (userId: User["id"]) => Promise<User>;
+export type AddUser = (user:User) => Promise<User>;
+export type DeleteUser = (userEmail: User["email"]) => Promise<string>;
+export type SetAdmin = (userEmail: User["email"]) => Promise<User>;

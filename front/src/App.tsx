@@ -4,11 +4,13 @@ import { CompleteTasksList } from './components/tasksList/completeTasks';
 import { List } from './components/tasksList/List'
 import './css/app.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Login } from './components/homePages/LogIn';
+import {User} from '../../backend/models/userModel' 
 import { dataTask } from './data/dataPoc';
 import { dataUserList } from './data/dataPoc';
 import { SignUp } from './components/homePages/SignUp';
-
+import { Login } from './components/homePages/LogIn';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HomePage } from './components/homePages/HomePage';
 export type IState= {
   taskList: {
       taskId:number
@@ -18,16 +20,11 @@ export type IState= {
       isRelevent :boolean
   }[]
 ,  
-    userList: {
-    email:string
-    password: string
-    fullName: string
-
-  }[]
+    userList: User[]
   
 }
 
-
+//cahnge to userList:User[] from models
 
 function App() {
 
@@ -36,8 +33,16 @@ function App() {
     const [userList,setUsers] = useState<IState["userList"]>(dataUserList)
 
   return (
-   <SignUp userList={userList} setUsers={setUsers} />
+<Router>
+      <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signUp" component={SignUp} />
+      <Route exact path="/tasks" component={List} />
+ 
+     </Switch>
 
+    </Router>        
   );
 }
 

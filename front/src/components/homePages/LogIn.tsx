@@ -1,77 +1,77 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../css/login.css'
-
-// import React, { useState } from 'react'
-// import { IState as Props } from '../../App'
-// interface IProps {
-//   setUserList: React.Dispatch<React.SetStateAction<Props["userList"]>>
-//   userList: Props["userList"]
-// }
-
-export const Login =()=>{
+import React, { useState } from 'react'
+import { IState as Props } from '../../App'
+import { userInfo } from 'os';
+import dataPoc  from '../../data/dataPoc';
+import {useHistory} from 'react-router-dom'
+import { NavBar } from './NavBar';
 
 
 
-//   const [input, setInput] = useState({
-//     taskName: "",
-//     taskEndTime: "",
-//   }) 
-  
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-//     setInput({
-//         ...input,
-//         [e.target.name]: e.target.value
-//     })
-//   }
-  
-//   const handleClick = () => {
-//     if(!input.taskEndTime || !input.taskName) return
-  
-//     setTask([
-//         ...taskList,
-//         {      
-//             taskId:taskList[taskList.length-1].taskId+1,
-//             taskName: input.taskName,
-//             endTime: input.taskEndTime,
-//             isComplete:false,
-//             isRelevent:true
-            
-//         }
-//     ]);
-  
-//     setInput({
-//         taskName: "",
-//         taskEndTime: ""
-//             })
-//   }
+interface IProps {
+  setUserList: React.Dispatch<React.SetStateAction<Props["userList"]>>
+  userList: Props["userList"]
+}
 
-
-
-//     return (
-//         <div className="wrapper fadeInDown">
-//         <div id="formContent">
+export const Login:React.FC<IProps> =({userList})=>{
+  const history =useHistory();
+    const [input, setInput] = useState({
+        email:"",
+        password:"",
+        
+      }) 
       
-//           {/* <div className="fadeIn first">
-//             <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-//           </div> */}
-//           <div>
-//             LogIn ToDo
-//           </div>
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        console.log("sdfdsfdsfdsf");
+    
+        setInput({
+            ...input,
+            [e.target.name]: e.target.value
+        })
+      }
+      
 
-//         <input type="text" id="login" className="fadeIn second" name="login" placeholder="login"/>
-//         <input type="text" id="password" className="fadeIn third" name="login" placeholder="password"/>
-//         <input type="submit" className="fadeIn fourth" value="Log In"/>
+      
+      const handleClick = () => {
+        if(!input.email||input.password){
+          const isLogged:boolean= dataPoc.isUserExists(input.email,input.password)
+          if(isLogged)
+            return history.push("/tasks")
+        }
+        history.push("/signUp")
+      }
+    
+    
+
+
+
+    return (
+      <>
+      <NavBar />
+        <div className="wrapper fadeInDown">
+        <div id="formContent">
+      
+          {/* <div className="fadeIn first">
+            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+          </div> */}
+          <div>
+            LogIn ToDo
+          </div>
+
+          <input type="text" onChange={handleChange} name={"email"} value={input.email} className="fadeIn second"  placeholder="email"/>
+          <input type="password" onChange={handleChange} name={"password"} value={input.password} className="fadeIn third"  placeholder="password"/>
+          <input type="submit" onClick={handleClick} className="fadeIn fourth" value="Log In"/>
   
         
       
-//         </div>
-//       </div>  
-//         )
+        </div>
+      </div>  
+      </>
+        )
 
-return (
-    <h1>reter</h1>
-)
+
 
 
 }

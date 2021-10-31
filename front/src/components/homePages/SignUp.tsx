@@ -4,6 +4,7 @@ import '../../css/login.css'
 
 import React, { useState } from 'react'
 import { IState as Props } from '../../App'
+import { NavBar } from './NavBar';
 interface IProps {
   setUsers: React.Dispatch<React.SetStateAction<Props["userList"]>>
   userList: Props["userList"]
@@ -31,14 +32,15 @@ export const SignUp : React.FC<IProps> = ({setUsers, userList}) => {
   
   const handleClick = () => {
     if(!input.email || !input.password|| !input.fullName) return
-console.log(userList);
+    console.log(userList);
         
     setUsers([
         ...userList,
         {      
             email:input.email,
             password:input.password,
-            fullName:input.fullName
+            fullName:input.fullName,
+            isAdmin:false
             
         }
     ]);
@@ -53,6 +55,8 @@ console.log(userList);
 
 
     return (
+      <>
+      <NavBar/>
         <div className="wrapper fadeInDown">
           <div id="formContent">
       
@@ -71,6 +75,7 @@ console.log(userList);
         </div>
 
       </div>  
+      </>
         )
 
 
