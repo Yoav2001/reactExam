@@ -1,5 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
+import "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
 import '../../css/login.css'
 import React, { useState } from 'react'
 import { IState as Props } from '../../App'

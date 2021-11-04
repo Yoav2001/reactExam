@@ -1,4 +1,4 @@
-
+/* 
 .ListComplete{
     display: none;
     position:fixed;
@@ -6,33 +6,35 @@
     display: flex;
     align-items: center;
     width: 10rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.233);
+    border: 0.2rem solid rgba(3, 3, 3, 0.267);
     padding: 1rem;
     justify-content: space-between;
-  }
+  } */
   .List {
     list-style: none;
     display: flex;
     align-items:flex-end;
     width: 25rem;
-    border: 0.1rem solid rgba(206, 206, 206, 0.856);
+    border: 0.2rem solid rgba(3, 3, 3, 0.267);
     border-radius: 3px;
-    padding: 1rem;
+    padding: 0.08rem;
     justify-content: space-between;
     position: relative;
     top: 40px;
-    background-color: rgba(39, 99, 189, 0.897);
-    opacity: 0.8 ;
+    /* background-color: rgba(39, 99, 189, 0.897); */
+    /* opacity: 0.8 ; */
     }
   
   .List-header {
     display: flex;
     align-items:flex-end;
+    color:black
+
   }
   
-  .List-header h2 {
-    color: rgb(255, 255, 255)
-  }
+  /* .List-header h2 {
+    color:black
+  } */
   
   .List-img {
     width: 4rem;
@@ -66,7 +68,7 @@
   
   p{
   
-    color:lavenderblush
+    color:black
   }
 
 

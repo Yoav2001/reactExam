@@ -5,6 +5,7 @@ import completeImg  from '../../img/check.png'
 import editImg  from '../../img/editEfron.png'
 import {Task} from '../../../../backend/models/taskModel'
 import '../../css/listAndComplete.css'
+import 'bootstrap/dist/css/bootstrap.css';
 // import Datetime from 'react-datetime';
 
 interface IStateTasks {
@@ -96,7 +97,7 @@ export const List: React.FC<IStateTasks> = ({ taskList ,setTask}) => {
                        <p>{taskObj.taskName} </p> 
                         <p>{taskObj.endTime}</p>
                      </div>
-
+                      <span className="bi bi-glyphicon glyphicon-pencil">fdsfdsfds</span>
                        <div id="txtAreaTasks" className={editMode? "":"editDisplayNone"}>
                           <textarea id="txtAreaNameTask" name="w3review" onChange={handleChange} >
                           {taskObj.taskName}
