@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { IState as Props } from '../../App'
 import '../../css/addToList.css'
-
+import { IStateTasks  as Props } from '../../components/tasksList/Tasks';
+import '../../css/navBar.css'
 
 
 interface IProps {
@@ -30,6 +30,7 @@ const AddToList: React.FC<IProps> = ({setTask, taskList}) => {
             ...taskList,
             {      
                 taskId:taskList[taskList.length-1].taskId+1,
+                emailUserOfTask:"yoavelkana@gmail.com",
                 taskName: input.taskName,
                 endTime: input.taskEndTime,
                 isComplete:false,
@@ -46,30 +47,28 @@ const AddToList: React.FC<IProps> = ({setTask, taskList}) => {
 
     return (
         <div className="AddToList">
+
             <input 
                 type="text"
                 onChange={handleChange}
-                className="AddToList-input"
+                className="fadeIn second"
                 name="taskName"
                 value={input.taskName}
                 placeholder="Name of task"
             />
+            
             <input 
-                type="text"
+                type="date"
                 onChange={handleChange}
-                className="AddToList-input"
+                className="fadeIn second"
                 name="taskEndTime"
                 value={input.taskEndTime}
                 placeholder="Age"
             />
           
-         
-            <button
-                onClick={handleClick}
-                className="AddToList-btn"
-            >
-                Add to List
-            </button>
+          <input type="submit" onClick={handleClick} className="fadeIn second" value=" Add to List"/>
+
+       
         </div>
     )
 }

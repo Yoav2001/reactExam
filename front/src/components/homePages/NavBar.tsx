@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import '../../css/login.css'
+import '../../css/navBar.css'
 import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 
@@ -22,13 +22,6 @@ export const NavBar:React.FC<any> =({numPageActive})=>{
       default:
         // code block
     }
-      document.getElementById("homeBtn")?.classList.remove("active")
-      document.getElementById("loginBtn")?.classList.remove("active")
-      document.getElementById("signUpBtn")?.classList.remove("active")
-     document.getElementById(idCheckButton)?.classList.add("active")
-
-
-
   }
 
 
@@ -37,10 +30,10 @@ export const NavBar:React.FC<any> =({numPageActive})=>{
         <> 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
   <li className="nav-item">
-    <button className="nav-link " onClick={()=>navPages("homeBtn")} id="homeBtn" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">Home</button>
+    <button  id="homeBtn" className="nav-link active" onClick={()=>navPages("homeBtn")}  data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">Home</button>
   </li>
   <li className="nav-item">
-    <button className="nav-link" onClick={()=>navPages("loginBtn")} id="loginBtn" data-toggle="tab" role="tab" aria-controls="login" aria-selected="false">login</button>
+    <button id="loginBtn" className="nav-link" onClick={()=>navPages("loginBtn")}  data-toggle="tab" role="tab" aria-controls="login" aria-selected="false">login</button>
   </li>
   <li className="nav-item">
     <button id="signUpBtn" className="nav-link" onClick={()=>navPages("signUpBtn")}  data-toggle="tab"  role="tab" aria-controls="signUp" aria-selected="false">signUp</button>

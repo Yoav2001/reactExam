@@ -1,10 +1,11 @@
-
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../css/login.css'
 
 import React, { useState } from 'react'
 import { IState as Props } from '../../App'
 import { NavBar } from './NavBar';
+import {useHistory} from 'react-router-dom'
+
 interface IProps {
   setUsers: React.Dispatch<React.SetStateAction<Props["userList"]>>
   userList: Props["userList"]
@@ -50,6 +51,9 @@ export const SignUp : React.FC<IProps> = ({setUsers, userList}) => {
         password: "",
         fullName:""
             })
+
+
+
   }
 
 
@@ -59,7 +63,6 @@ export const SignUp : React.FC<IProps> = ({setUsers, userList}) => {
       <NavBar/>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-      
             {/* <div className="fadeIn first">
               <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
             </div> */}

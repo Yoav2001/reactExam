@@ -11,6 +11,8 @@ import { SignUp } from './components/homePages/SignUp';
 import { Login } from './components/homePages/LogIn';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HomePage } from './components/homePages/HomePage';
+import { Tasks } from './components/tasksList/Tasks';
+
 export type IState= {
   taskList: {
       taskId:number
@@ -28,7 +30,6 @@ export type IState= {
 
 function App() {
 
-  const [taskList,setTask] = useState<IState["taskList"]>(dataTask)
 
     const [userList,setUsers] = useState<IState["userList"]>(dataUserList)
 
@@ -38,7 +39,7 @@ function App() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signUp" component={SignUp} />
-      <Route exact path="/tasks" component={List} />
+      <Route exact path="/tasks" component={Tasks} />
  
      </Switch>
 

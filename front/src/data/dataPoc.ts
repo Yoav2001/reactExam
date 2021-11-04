@@ -1,20 +1,26 @@
-import { IState } from "../App";
+import { IStateTasks } from "../components/tasksList/Tasks";
+import { IState } from "../App";//צריך ליצור isatteUser
+
 import { User } from "../../../backend/models/userModel";
 
-export const dataTask:IState["taskList"]=[
+export const dataTask:IStateTasks["taskList"]=[
     {
       taskId:1,
+      emailUserOfTask:"yoavElkana@gmail.com",
       taskName: "do h.w",
       endTime: "1.1.12",
       isComplete: true,
-      isRelevent:true
+      isRelevent:true,
+      isEdit:false
     },
     { 
       taskId:2,
+      emailUserOfTask:"nuniElkna@gmail.com",
       taskName: "wash car",
       endTime: "1.1.12",
       isComplete: true,
-      isRelevent:true
+      isRelevent:true,
+      isEdit:false
     }
 
   ]
@@ -23,14 +29,14 @@ export const dataTask:IState["taskList"]=[
 
   export const dataUserList:IState["userList"]=[
     {
-        email:"yoavelkan2",
+        email:"yoavElkana@gmail.com",
         password: "123",
         fullName: "yoav elkana",
         isAdmin:false
     
     },
     { 
-        email:"nuniElkna",
+        email:"nuniElkna@gmail.com",
         password: "31231231",
         fullName: "nuni elkana",
         isAdmin:false

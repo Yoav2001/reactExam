@@ -1,4 +1,6 @@
 {
+  
+    "lockfileVersion": 1,
   "name": "to-do",
   "version": "0.1.0",
   "private": true,
@@ -44,3 +46,4 @@
     ]
   }
 }
+

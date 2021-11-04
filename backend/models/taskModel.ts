@@ -6,7 +6,8 @@ export type Task = {
     taskName: string
     endTime: string
     isComplete:boolean,
-    isRelevent :boolean
+    isRelevent :boolean,
+    isEdit?:boolean
 }
 
 export type GetTasksOfUser = (userEmail: Task['emailUserOfTask']) => Promise<Task[]>;

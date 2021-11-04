@@ -23,7 +23,7 @@
     top: 40px;
     background-color: rgba(39, 99, 189, 0.897);
     opacity: 0.8 ;
-  }
+    }
   
   .List-header {
     display: flex;
@@ -67,4 +67,9 @@
   p{
   
     color:lavenderblush
+  }
+
+
+  .editDisplayNone{
+    display:none;
   }
